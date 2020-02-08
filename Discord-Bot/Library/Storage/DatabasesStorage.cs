@@ -27,7 +27,7 @@ namespace Library
 
 		private string LoadConnectionString()
 		{
-			return "Data Source =.\\DiscordDatabase.db";    
+			return "Data Source =.\\Database\\DiscordDatabase.db";    
 		}
 	}
 }
