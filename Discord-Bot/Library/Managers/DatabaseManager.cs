@@ -14,8 +14,15 @@ namespace Library
 		public string GetToken()
 		{
 			List<string> token = _storage.RetrieveObject<string>("BotConfiguration", "Token");
-
 			return token.FirstOrDefault();
+		}
+
+		public string GetCommandPrefix()
+		{
+			List<string> commandPrefix = _storage.RetrieveObject<string>
+				("BotConfiguration", "CommandPrefix");
+			return commandPrefix.FirstOrDefault();
+
 		}
 	}
 }

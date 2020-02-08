@@ -28,14 +28,17 @@ namespace Library
 
 			_container.RegisterSingleton<Connection>();
 			_container.RegisterSingleton<IDataStorage, DatabasesStorage>();
-			_container.RegisterSingleton<DiscordSocketClient>
-				(new InjectionConstructor(typeof(DiscordSocketConfig)));
 			_container.RegisterSingleton<ILogger, Logger>();
 			_container.RegisterSingleton<CommandService>();
-			_container.RegisterSingleton<IServiceProvider>();
+
+			_container.RegisterSingleton<DiscordSocketClient>
+				(new InjectionConstructor(typeof(DiscordSocketConfig)));
+			
 
 			_container.RegisterFactory<DiscordSocketConfig>
 				(i => SocketConfigProvider.GetDefault());
+			_container.RegisterFactory<IServiceProvider>
+				(i => ServiceProvider.GetDefault());
 			
 		}
 
