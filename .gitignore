@@ -353,7 +353,4 @@ MigrationBackup/
 .ionide/
 
 *.db
-*.db
-*.db
-*.db
-Discord-Bot/Library/DiscordDatabase.db
+Database
