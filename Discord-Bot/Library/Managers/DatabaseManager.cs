@@ -5,7 +5,7 @@ namespace Library
 {
 	public class DatabaseManager
 	{
-		private IDataStorage _storage;
+		private readonly IDataStorage _storage;
 		public DatabaseManager(IDataStorage storage)
 		{
 			_storage = storage;
