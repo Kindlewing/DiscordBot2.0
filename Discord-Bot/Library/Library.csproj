@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="DiscordDatabase.db" />
+    <None Remove="Database\DiscordDatabase.db" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="DiscordDatabase.db">
+    <Content Include="Database\DiscordDatabase.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
