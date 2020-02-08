@@ -1,6 +1,8 @@
 ﻿using Discord;
+using Discord.Commands;
 using Discord.WebSocket;
 using Library.Factories;
+using System;
 using Unity;
 using Unity.Injection;
 
@@ -29,7 +31,12 @@ namespace Library
 			_container.RegisterSingleton<DiscordSocketClient>
 				(new InjectionConstructor(typeof(DiscordSocketConfig)));
 			_container.RegisterSingleton<ILogger, Logger>();
-			_container.RegisterFactory<DiscordSocketConfig>(i => SocketConfigProvider.GetDefault());	
+			_container.RegisterSingleton<CommandService>();
+			_container.RegisterSingleton<IServiceProvider>();
+
+			_container.RegisterFactory<DiscordSocketConfig>
+				(i => SocketConfigProvider.GetDefault());
+			
 		}
 
 		public static T Resolve<T>()
